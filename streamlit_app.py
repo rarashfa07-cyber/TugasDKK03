@@ -1,1 +1,33 @@
-https://streamlit.io/playground?example=hello&code=H4sIAAAAAAAAA42QTVPCMBCG7_0VS7wkDFMK6owwcpDxIFbUQw_emC0NJbZJmDSRv29KKeAoak7Zj_fZd1fIjTYWKms4ylJYwMoHQVDZ0ApbckoSl_vcq9HvfFnAfRwTVlclmiLTW0UD8I8QArvPnTC4hmotVgg0umS75Bskj3ECnbY1YEHKDVqY-FmhctJHC6E2zlIy3RWmmKECWuRsTHoghVp8YOn4JGKBFSrPxU_SpKnstUv5XRuIVS1LnbVaUfIgrFM5YeOdMV_bu5pABNpAO8mHTUf9vJwbow0lT1zlBW4EZGgRUGXYIc2-vKz4UZHK2m2D7gOle2wfBlHEoNuFITulb42w_uzT-QwKlK7ewWinMuo5Pd_rt2i7LyBGy3Nt_NLz2SFdL-Jn3sLgJrw--vjKb5VjiHnhDKrcH60xmdYHJEdTvDwQh1fh6G_iszYSyzOE0X8IMS95Kta_WDq98DnKS8orYbEi7BPjtz_m5wIAAA
+import streamlit as st
+
+st.title("Tugas DKK")
+st.markdown(
+    """ 
+   Airah Shifa (03)
+   x TJKT !
+    """
+)
+
+import streamlit as st
+
+st.title("Kalkulator BMI")
+
+berat = st.number_input("Berat Badan (kg):", min_value=0)
+tinggi = st.number_input("Tinggi Badan (cm):", min_value=0)
+
+if st.button("Hitung"):
+    if berat == 0 or tinggi == 0:
+        st.error("Lengkapi data anda!")
+    else:
+        bmi = berat / ((tinggi / 100) ** 2)
+        st.write("BMI kamu:", round(bmi, 2))
+
+        # Kategori BMI
+        if bmi < 18.5:
+            st.write("Kategori: Kekurangan berat badan")
+        elif bmi < 24.9:
+            st.write("Kategori: Normal")
+        elif bmi < 29.9:
+            st.write("Kategori: Kelebihan berat badan")
+        else:
+            st.write("Kategori: Obesitas")
