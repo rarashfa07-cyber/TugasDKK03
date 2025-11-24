@@ -79,12 +79,4 @@ if st.button("Hitung"):
             </div>
             """,
             unsafe_allow_html=True
-    )import streamlit as st
-
-st.title("Tugas DKK")
-st.markdown(
-    """ 
-   Airah Shifa (03)
-   x TJKT !
-    """
-)
+    )
